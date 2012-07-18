@@ -49,19 +49,13 @@
 		<script type="text/javascript" src="../ui/jquery.ui.map.services.js"></script>
 		<script type="text/javascript" src="../ui/jquery.ui.map.extensions.js"></script>
 		<script type="text/javascript">
-            $(function() { 
+		  $(function() { 
 				demo.add(function() {
 					var markers = [
-						{'position': '59.32893000000001,18.064910000000054', 'title': 'Stockholm, Sweden' },
-						{'position': '35.6894875,139.69170639999993', 'title': 'Tokyo, Japan' },
-						{'position': '13.7234186, 100.47623190000002', 'title': 'Bangkok, Thailand' },
-						{'position': '51.508129,-0.12800500000003012', 'title': 'London, Great Britain' },
-						{'position': '40.7143528,-74.0059731', 'title': 'New York, USA' },
-						{'position': '48.856614,2.3522219000000177', 'title': 'Paris, France' },
-						{'position': '34.0522342,-118.2436849', 'title': 'Los Angeles, USA' },
-						{'position': '55.75,37.616666699999996', 'title': 'Moskva, Ryssia' }
+	                                        {'position': '59.435573,18.030946', 'title': 'Hemma'},
+		                                {'position': '56.5055,12.947173', 'title': 'Mellbystrand'}
 					];
-					$('#map_canvas').gmap({'zoom': 6, 'disableDefaultUI':true, 'callback': function() {
+					$('#map_canvas').gmap({'zoom': 22, 'disableDefaultUI':true, 'callback': function() {
 						var self = this;
 						$.each(markers, function(i, marker) {
 							self.addMarker(marker).click(function() {
