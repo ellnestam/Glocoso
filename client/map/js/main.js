@@ -1,17 +1,20 @@
 $(function() { 
-    demo.add(function() {
-	var markers = [
-            {'position': '59.435573, 18.030946', 'title': 'Maxis plejz'},
-	    {'position': '59.434920, 18.032470', 'title': 'Nathans plejz'},
-	    {'position': '56.505500, 12.947173', 'title': 'Mellbystrand'}
-	];
-	$('#map_canvas').gmap({'zoom': 16, 'disableDefaultUI':true, 'callback': function() {
-	    var self = this;
-	    $.each(markers, function(i, marker) {
-		self.addMarker(marker).click(function() {
-		    self.openInfoWindow({'content': this.title}, this);
+    $('#map_canvas').gmap({'callback': function() {
+	var self = this;
+	$.getJSON(
+	    'http://localhost:8001/usr/pwd/list', function(positions) {
+		$.each(positions, function(i, marker) {
+		    console.log(marker);
+		    self.addMarker(positions[i]);
 		});
 	    });
-	}}).gmap('pagination', 'title');
-    }).load();
+	
+	//self.addMarker({'position': '57.7973333,12.0502107', 'bounds': true}).click(function() {
+	  //  self.openInfoWindow({'content': 'Hello World!'}, this);
+	// });
+    }});
+    
+//	$('#map_canvas').gmap({'zoom': 16, 'disableDefaultUI':true, 'callback': function() {
+//	}}).gmap('pagination', 'title');
+//    }).load();
 });
