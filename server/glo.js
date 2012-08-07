@@ -14,9 +14,9 @@ var clientPort = 1337;
 var commands = {
     list : function() {
 	return JSON.stringify(
-	    [{'position': '59.435573, 18.030946', 'title': 'Maxis plejz'},
-	     {'position': '59.434920, 18.032470', 'title': 'Nathans plejz'},
-	     {'position': '56.505500, 12.947173', 'title': 'Mellbystrand'}]);
+	    [{'lat': '59.435573', 'lng': '18.030946', 'title': 'Ellnestams'},
+	     {'lat': '63.225586', 'lng': '13.057251', 'title': 'Ottsjö'},
+	     {'lat': '56.505500', 'lng': '12.947173', 'title': 'Mellby'}]);
     }
 };
 
